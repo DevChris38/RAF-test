@@ -1,6 +1,7 @@
-const ball = document.getElementById("ball");
+const brique = document.getElementById("brique");
 let start, previousTimeStamp, toucheClavier;
-let sens = "translateY(";
+let left = 0;
+let right = 0;
 
 function step(timeStamp) {
 
@@ -12,19 +13,13 @@ document.addEventListener(
 
     switch (toucheClavier){
         case 'ArrowRight' :
-            sens = "translateX(";
+            right = right + 10;
+            toucheClavier = 0;
             break;
 
         case 'ArrowLeft' :
-            sens = "translateX(-";
-            break;
-
-        case 'ArrowTop' :
-            sens = "translateY(-";
-            break;
-
-        case 'ArrowDown' :
-            sens = "translateY(";
+            right = right - 10;
+            toucheClavier = 0;
             break;
         }
 
@@ -33,13 +28,15 @@ document.addEventListener(
   }
   const elapsed = timeStamp - start;
 
+  const count = 0.1 * elapsed;
+
   if (previousTimeStamp !== timeStamp) {
-    const count = 0.01 * elapsed;
-    ball.style.transform = `${sens}${count}px)`;
-    
+    brique.style.top = `${count}px`;
+    brique.style.left = `${right}px`;  
   }
 
-  if (elapsed >= 0) {
+  console.log(count + ' ' + window.innerHeight)
+  if (count < (window.innerHeight-51)) {
     previousTimeStamp = timeStamp;
       window.requestAnimationFrame(step);
     }
