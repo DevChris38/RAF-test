@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#brique{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    left: 50%;
+    top: 10%;
+    background-color: purple;
+}
+
