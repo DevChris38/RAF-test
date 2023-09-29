@@ -28,7 +28,7 @@ document.addEventListener(
   }
   const elapsed = timeStamp - start;
 
-  const count = 0.01 * elapsed;
+  const count = 0.05 * elapsed;
 
   if (previousTimeStamp !== timeStamp) {
     brique.style.top = `${count}px`;
