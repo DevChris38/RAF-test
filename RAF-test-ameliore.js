@@ -13,12 +13,12 @@ document.addEventListener(
 
     switch (toucheClavier){
         case 'ArrowRight' :
-            right = right + 10;
+            right = right + 50;
             toucheClavier = 0;
             break;
 
         case 'ArrowLeft' :
-            right = right - 10;
+            right = right - 50;
             toucheClavier = 0;
             break;
         }
@@ -28,7 +28,7 @@ document.addEventListener(
   }
   const elapsed = timeStamp - start;
 
-  const count = 0.1 * elapsed;
+  const count = 0.01 * elapsed;
 
   if (previousTimeStamp !== timeStamp) {
     brique.style.top = `${count}px`;
